@@ -32,6 +32,7 @@ def signups(request):
     username = request.data.get('username')
     first_name = request.data.get('first_name')
     last_name = request.data.get('last_name')
+    email = request.data.get('email')
     password = request.data.get('password')
     repassword = request.data.get('repassword')
     if username is None or password is None:
@@ -41,5 +42,5 @@ def signups(request):
     if password != repassword:
         return Response({'error': 'Password does not match'}, status=400)
     user = User.objects.create_user(
-        username=username, first_name=first_name, last_name=last_name, password=password)
+        username=username, first_name=first_name, last_name=last_name, email=email, password=password)
     return Response({'message': 'User created successfully'})

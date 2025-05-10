@@ -17,24 +17,29 @@ const Home = () => {
         setUser(res.data);
       } catch {
         clearTokens();
-        navigate('/login');
+        navigate('/signup');
       }
     };
 
     fetchUser();
   }, [navigate]);
 
+  const handleLogout = () => {
+    clearTokens();
+    navigate('/signup');
+  };
+
   return (
-    <div>
-      {user ? <h1>Hello, {user.username}</h1> : <h1>Loading...</h1>}
-      <button
-        onClick={() => {
-          clearTokens();
-          navigate('/login');
-        }}
-      >
-        Logout
-      </button>
+    <div className="home-container">
+      {user ? (
+        <>
+          <h1>Welcome, {user.username}!</h1>
+          <p>Email: {user.email}</p>
+          <button onClick={handleLogout}>Logout</button>
+        </>
+      ) : (
+        <h1>Loading...</h1>
+      )}
     </div>
   );
 };

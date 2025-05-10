@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 
 const App = () => (
   <BrowserRouter>
-    <Navbar />
+   
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<Signup />} />
