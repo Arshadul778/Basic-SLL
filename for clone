@@ -1,0 +1,12 @@
+For clone this project
+(need git installed)
+# git clone https://github.com/Arshadul778/Basic-SLL.git
+# cd Basic-SLL
+# pip install pipenv (if pipenv not installed)
+# pipenv install
+# pipenv shell
+# cd frontend
+# npm install
+# python manage.py runserver
+# npm run dev
+
